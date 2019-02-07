@@ -96,8 +96,8 @@ federation_rc_concurrent: 3
 
 media_store_path: "/data/media"
 uploads_path: "/data/uploads"
-max_upload_size: "{{ SYNAPSE_MAX_UPLOAD_SIZE or "10M" }}"
-max_image_pixels: "32M"
+max_upload_size: "{{ SYNAPSE_MAX_UPLOAD_SIZE or "1M" }}"
+max_image_pixels: "8M"
 dynamic_thumbnails: false
 
 # List of thumbnail to precalculate when an image is uploaded.
@@ -157,7 +157,7 @@ enable_registration: {{ "True" if SYNAPSE_ENABLE_REGISTRATION else "False" }}
 registration_shared_secret: "{{ SYNAPSE_REGISTRATION_SHARED_SECRET }}"
 bcrypt_rounds: 12
 allow_guest_access: {{ "True" if SYNAPSE_ALLOW_GUEST else "False" }}
-enable_group_creation: true
+enable_group_creation: false
 
 # The list of identity servers trusted to verify third party
 # identifiers by this server.
